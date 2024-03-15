@@ -31,6 +31,10 @@
 - Movie list & Movie Card
 - Image cdn url from tmdb
 - usePopularMovies hook
+- GPT search page
+- GPT Seachbar
+- multi language feature searchbar
+-
 
 # Features
 
