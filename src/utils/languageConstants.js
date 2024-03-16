@@ -27,7 +27,6 @@ const lang = {
     search: "Recherche",
     searchPlaceholder: "Qu’aimez-vous regarder aujourd’hui ?",
   },
-
 };
 
 export default lang;
