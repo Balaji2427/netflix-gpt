@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Logo from "../images/logo.png";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGptSearchView } from "../utils/gptSlice";
@@ -56,10 +56,12 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img src={Logo} alt="logo" className="w-44" />
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+      <Link to="/">
+        <img src={Logo} alt="logo" className="w-44 mx-auto md:mx-0" />
+      </Link>
       {user && (
-        <div className="flex p-2">
+        <div className="flex justify-between p-2">
           {showGptSearch && (
             <select
               className="p-2 m-2 bg-gray-900 text-white rounded-lg"
@@ -73,12 +75,16 @@ const Header = () => {
             </select>
           )}
           <button
-            className="px-4 py-2 m-2 bg-purple-800 text-white rounded-lg mx-4 my-2"
+            className="px-3 py-2 m-2 bg-purple-800 text-white rounded-lg mx-4 my-2"
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
-          <img src={user?.photoURL} alt="user-icon" className="w-12 h-12" />
+          <img
+            src={user?.photoURL}
+            alt="user-icon"
+            className="hidden md:block w-12 h-12"
+          />
           <button
             onClick={handleSignOut}
             className="font-bold text-white cursor-pointer"
