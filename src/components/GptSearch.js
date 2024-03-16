@@ -6,7 +6,7 @@ import Background from "../images/background.jpg";
 const GptSearch = () => {
   return (
     <div>
-      <img src={Background} alt="background" className="absolute -z-10" />
+      <img src={Background} alt="background" className="fixed -z-10" />
       <GptSearchbar />
       <GptMovieSuggestions />
     </div>
