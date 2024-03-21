@@ -95,7 +95,7 @@ const Login = () => {
           alt="background"
         />
       </div>
-      <form
+      <div
         className="absolute w-full md:w-3/12 p-12 bg-black my-28 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
         onSubmit={(e) => e.preventDefault()}
       >
@@ -134,7 +134,7 @@ const Login = () => {
             ? "New to Netflix? Sign up now"
             : "Already registered? Sign In now"}
         </p>
-      </form>
+      </div>
     </div>
   );
 };
